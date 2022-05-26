@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Bad8reak!!",
+    "database": "Socializr",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Bad8reak!!",
+    "database": "Socializr_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Bad8reak!!",
+    "database": "Socializr_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
