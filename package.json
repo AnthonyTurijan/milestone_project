@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Method | Path | Purpose | \r ------------- | ------------- | ------------ \r GET  | /  | homepage\r GET  | /auth/logon | Render a page with a login form\r POST | /auth/login | Accept and process information from the login form\r GET  | /signup/register | Render a page with a sign-up form\r POST | /signup/register | Accept and process information from the registration form\r GET\t | /profile\t | Render profile page/form\r POST | /profile\t| Accepts and processes profile form\r GET\t | /Newsfeed |\tRenders post from newest to oldest\r POST | /user/post\t| Process data submitted from form text and or images.\r GET |\t/newsfeed\t| Renders newsfeed based on user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rowens72/milestone_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rowens72/milestone_project/issues"
+  },
+  "homepage": "https://github.com/rowens72/milestone_project#readme"
+}

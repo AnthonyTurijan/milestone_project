@@ -15,3 +15,10 @@ POST | /profile	| Accepts and processes profile form
 GET	 | /Newsfeed |	Renders post from newest to oldest
 POST | /user/post	| Process data submitted from form text and or images.
 GET |	/newsfeed	| Renders newsfeed based on user
+
+
+
+## Developed using
+
+packages | url
+[bcryptjs](https://www.npmjs.com/package/bcryptjs)  https://www.npmjs.com/package/bcryptjs
