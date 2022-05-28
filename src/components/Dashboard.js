@@ -31,42 +31,42 @@ class Dashboard  extends Component {
     render() {
       return(
         <>
-        {/* {'one item with modal link -login'} */}
+        {/* {'Login Modal'} */}
         <div className="icon">
             <a
               className="button"
-              onClick={() => this.handleOpenModal("login")}
+              onClick={() => this.handleOpenModal("Login")}
             >
               Login
             </a>
             <Modal
               isOpen={
                 this.state.showModal &&
-                this.state.activeModal === "login"
+                this.state.activeModal === "Login"
               }
-              contentLabel="login Modal"
+              contentLabel="Login Modal"
             >
               <div className="content">
                 <button className="close" onClick={this.handleCloseModal}>X</button>
-                <p><Login />></p>
+                <p><Login /></p>
               </div>
 
             </Modal>
         </div>
-        {/* {'another item with modal link calendar, add more by mutiplying this below'} */}
+        {/* {'Sign up modal'} */}
         <div className="icon">
             <a
               className="button"
-              onClick={() => this.handleOpenModal("calendar")}
+              onClick={() => this.handleOpenModal("Signup")}
             >
               Signup
             </a>
             <Modal
               isOpen={
                 this.state.showModal &&
-                this.state.activeModal === "calendar"
+                this.state.activeModal === "Signup"
               }
-              contentLabel="calendar Modal"
+              contentLabel="Signup Modal"
             >
               <div className="content">
                 <button className="close" onClick={this.handleCloseModal}>X</button>
