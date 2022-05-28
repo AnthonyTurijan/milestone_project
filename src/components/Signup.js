@@ -21,7 +21,6 @@ function Signup() {
       const firstName = firstNameInputRef.current.value
       const lastName = firstNameInputRef.current.value
       const dob = dateofBirthInputRef.current.value
- 
 
       const hashedPassword = bcrypt.hashSync(password, salt) // hash created previously created upon sign up
       fetch('https://localhost:3000/signup', {
@@ -53,6 +52,12 @@ function Signup() {
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete="current-password"/>
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={passwordComfirmationInputRef} type='password' placeholder='Confirm Password'  />
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={dateofBirthInputRef} type='date' />
+          <form>
+            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={firstNameInputRef} type='email' placeholder='First Name' />
+            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={lastNameInputRef} type='email' placeholder='Last Name' />
+            <br />
+            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={emailInputRef} type='email' placeholder='User Name' autoComplete="username" />
+            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete="current-password"/>
             <button
               type='submit'
               style={{ padding: '5px', borderRadius: '3px', margin: '.5rem' }}
@@ -63,7 +68,9 @@ function Signup() {
               Log In
             </button>
           </form>
+
           </div>
+          <br />
         </header>
       </div>
     )

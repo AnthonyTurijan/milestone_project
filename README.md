@@ -22,3 +22,4 @@ Package | Install Commnad | documentation
 --- | --- | ---
 [bcryptjs](https://www.npmjs.com/package/bcryptjs) | npm install bcryptjs | GitHub: https://github.com/dcodeIO/bcrypt.js  <br />other Documentation: [a-quick-guide-for-authentication-using-bcrypt-on-express-nodejs](https://medium.com/@mridu.sh92/a-quick-guide-for-authentication-using-bcrypt-on-express-nodejs-1d8791bb418f)
 [react-modal](https://github.com/reactjs/react-modal) | npm install --save react-modal | GitHub: https://github.com/reactjs/react-modal
+
