@@ -1,16 +1,17 @@
-import React from 'react';
-// import './App.css';
- import Login from './components/Login'
- import Signup from './components/Signup'
- import { useRef } from 'react'
+import Dashboard from './components/Dashboard';
+import './style.css'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <Login />
-      <Signup/>
-      </header>
-    </div>
+    <>
+       
+        <div className="container">
+          <header><div style={{fontFamily:'sans-serif', fontSize:'2rem', color:'#dbe4ee', textShadow: '-1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000', fontWeight:'Bolder', textAlign:'left', margin:'1rem'}}>Socializr</div></header>
+          <nav><Dashboard/></nav>
+          <main>main</main>
+          <aside>aside</aside>
+          <footer>footer</footer>
+        </div>
+    </>
   );
 }
 

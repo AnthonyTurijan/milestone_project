@@ -1,25 +1,22 @@
 import { useRef } from 'react'
-
 import bcrypt from 'bcryptjs'
 
 // SALT should be created ONE TIME upon sign up
 const salt = bcrypt.genSaltSync(14)
 // example =>  $2a$10$CwTycUXWue0Thq9StjUM0u => to be added always to the password hash
 
-
-
-
 function Login() {
     const emailInputRef = useRef()
     const passwordInputRef = useRef()
+
   
     function handleLoginForm() {
       console.log(salt)
       const email = emailInputRef.current.value
       const password = passwordInputRef.current.value
-      const hashedPassword = bcrypt.hashSync(password, '$2a$10$CwTycUXWue0Thq9StjUM0u') // hash created previously created upon sign up
+      const hashedPassword = bcrypt.hashSync(password, salt) // hash created previously created upon sign up
       console.log(password)
-      fetch('https://api.sampleapis.com/beers/ale', {
+      fetch('https://localhost:3000/signup', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -33,11 +30,12 @@ function Login() {
     }
   
     return (
-      <div className='App'>
-        <header className='App-header'>
+      <>         
+         <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'250px'}}>
           <form>
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={emailInputRef} type='email' placeholder='Email' autoComplete="username" />
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete='current-password' />
+            
             <button
               type='submit'
               style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }}
@@ -48,13 +46,8 @@ function Login() {
               Log In
             </button>
           </form>
-          <span>Your new SALT: {salt}</span>
-          <br />
-          <span>
-            Save this Salt, UPON sign up <br /> if you refresh it will generate a new SALT!!!
-          </span>
-        </header>
-      </div>
+        </div>
+      </>
     )
   }
   
