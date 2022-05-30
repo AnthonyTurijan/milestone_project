@@ -43,8 +43,7 @@ function Signup() {
   
     return (
   
-      <div className='App'>
-        <header className='App-header'>
+      <>
          <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'250px'}}>
           <form>
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={firstNameInputRef} type='text' placeholder='First Name' autoComplete="firstName" />
@@ -64,8 +63,7 @@ function Signup() {
             </button>
           </form>
           </div>
-        </header>
-      </div>
+      </>
     )
   }
   

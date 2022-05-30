@@ -26,7 +26,7 @@ class Dashboard  extends Component {
   
     handleCloseModal() {
       this.setState({ showModal: false });
-      this.setState({ showModal: "" });
+      this.setState({ showModal: false });
     }
     render() {
       return(
@@ -44,11 +44,12 @@ class Dashboard  extends Component {
                 this.state.showModal &&
                 this.state.activeModal === "Login"
               }
+              ariaHideApp={false}
               contentLabel="Login Modal"
             >
               <div className="content">
                 <button className="close" onClick={this.handleCloseModal}>X</button>
-                <p><Login /></p>
+               <Login />
               </div>
 
             </Modal>
@@ -66,11 +67,12 @@ class Dashboard  extends Component {
                 this.state.showModal &&
                 this.state.activeModal === "Signup"
               }
+              ariaHideApp={false}
               contentLabel="Signup Modal"
             >
               <div className="content">
                 <button className="close" onClick={this.handleCloseModal}>X</button>
-                <p><Signup /></p>
+                <Signup />
               </div>
 
             </Modal>

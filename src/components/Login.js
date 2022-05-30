@@ -30,8 +30,7 @@ function Login() {
     }
   
     return (
-      <div className='App'>
-         <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'250px'}}>
+      <>
           <form>
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={emailInputRef} type='email' placeholder='Email' autoComplete="username" />
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete='current-password' />
@@ -46,13 +45,8 @@ function Login() {
               Log In
             </button>
           </form>
-          <span>Your new SALT: {salt}</span>
-          <br />
-          <span>
-            Save this Salt, UPON sign up <br /> if you refresh it will generate a new SALT!!!
-          </span>
-        </div>
-      </div>
+
+        </>
     )
   }
   

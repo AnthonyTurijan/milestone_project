@@ -5,8 +5,6 @@ function App() {
   return (
     <>
         <Dashboard/>
-        {/* <Login />
-        <Signup /> */}
     </>
   );
 }
