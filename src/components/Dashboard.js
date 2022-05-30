@@ -5,9 +5,6 @@ import Signup from "./Signup"
 
 // import './modal.css';
 
-
-
-
 class Dashboard  extends Component {
     constructor(props) {
       super(props);
