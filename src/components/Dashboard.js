@@ -4,6 +4,12 @@ import Login from './Login'
 import Signup from "./Signup"
 
 // import './modal.css';
+const buttons = {
+  padding: '5px', 
+  borderRadius: '10px', 
+  margin: '.5rem',
+  borderColor: '#054a91'
+}
 
 class Dashboard  extends Component {
     constructor(props) {
@@ -30,12 +36,11 @@ class Dashboard  extends Component {
         <>
         {/* {'Login Modal'} */}
         <div className="icon">
-            <a
-              className="button"
+            <button style={buttons}
               onClick={() => this.handleOpenModal("Login")}
             >
               Login
-            </a>
+            </button>
             <Modal
               isOpen={
                 this.state.showModal &&
@@ -52,13 +57,13 @@ class Dashboard  extends Component {
             </Modal>
         </div>
         {/* {'Sign up modal'} */}
-        <div className="icon">
-            <a
-              className="button"
+        <div >
+            <button
+              style={buttons}
               onClick={() => this.handleOpenModal("Signup")}
             >
               Signup
-            </a>
+            </button>
             <Modal
               isOpen={
                 this.state.showModal &&
