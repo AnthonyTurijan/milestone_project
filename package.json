@@ -1,19 +1,44 @@
-{
-  "name": "y",
-  "version": "1.0.0",
-  "description": "Method | Path | Purpose | \r ------------- | ------------- | ------------ \r GET  | /  | homepage\r GET  | /auth/logon | Render a page with a login form\r POST | /auth/login | Accept and process information from the login form\r GET  | /signup/register | Render a page with a sign-up form\r POST | /signup/register | Accept and process information from the registration form\r GET\t | /profile\t | Render profile page/form\r POST | /profile\t| Accepts and processes profile form\r GET\t | /Newsfeed |\tRenders post from newest to oldest\r POST | /user/post\t| Process data submitted from form text and or images.\r GET |\t/newsfeed\t| Renders newsfeed based on user",
-  "main": "index.js",
+
+  "name": "milestone_project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "bcryptjs": "^2.4.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-modal": "^3.15.1",
+    "react-scripts": "5.0.1",
+    "sequelize": "^6.20.0",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rowens72/milestone_project.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rowens72/milestone_project/issues"
-  },
-  "homepage": "https://github.com/rowens72/milestone_project#readme"
-}
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+
