@@ -31,11 +31,11 @@ function Login() {
   
     return (
       <>         
-         <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'250px'}}>
+         <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'250px', textAlign:'center', color:'#054a91', fontSize:'12px'}}>
           <form>
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={emailInputRef} type='email' placeholder='Email' autoComplete="username" />
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete='current-password' />
-            
+              <br />By clicking log in below, you agree to Socializr’s Terms of Service and have <br />read the Privacy Policy<br />
             <button
               type='submit'
               style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }}
