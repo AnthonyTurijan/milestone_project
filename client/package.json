@@ -2,7 +2,7 @@
     "name": "milestone_project",
     "version": "0.1.0",
     "private": true,
-    "proxy":"http://localhost:3000",
+    "proxy": "http://localhost:3000",
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.2.0",
@@ -17,11 +17,9 @@
         "react-modal": "^3.15.1",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
-        "sequelize": "^6.20.0",
         "styled-components": "^5.3.5",
         "web-vitals": "^2.1.4"
-     },
-    
+    },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
