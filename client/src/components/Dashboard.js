@@ -53,7 +53,7 @@ class Dashboard  extends Component {
             >
               <div style={{borderBottom: '1px solid #054a91'}}>
                 <div style={{display: 'flex', color:'#054a91', fontWeight: 'bold', width: '150px'}}>
-                  Socializer Login
+                  Socializr Login
                 </div>
                 <button className="close" onClick={this.handleCloseModal}>
                     X
@@ -88,7 +88,7 @@ class Dashboard  extends Component {
             >
                <div style={{borderBottom: '1px solid #054a91'}}>
                 <div style={{display: 'flex', color:'#054a91', fontWeight: 'bold', width: '150px'}}>
-                  Socializer Signup
+                  Socializr Signup
                 </div>
                 <button className="close" onClick={this.handleCloseModal}>
                     X

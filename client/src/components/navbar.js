@@ -14,6 +14,9 @@ export default function Navbar() {
         <Link to="/profile">Profile</Link>
       </li>
       <li>
+        <Link to="/events">Events</Link>
+      </li>
+      <li>
         <Link to="/newsfeed">News Feed</Link>
       </li>
     </ul>
