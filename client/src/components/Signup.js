@@ -51,10 +51,10 @@ function Signup() {
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={emailInputRef} type='email' placeholder='Email Address' autoComplete="username" />
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete="current-password"/>
             <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={passwordComfirmationInputRef} type='password' placeholder='Confirm Password'  />
-            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={dateofBirthInputRef} type='date' />
+            <label style={{ padding: '.25rem', borderRadius: '10'}}>date of birth: </label><input style={{ padding: '.25rem', borderRadius: '10px', margin: '.5rem' }} ref={dateofBirthInputRef} type='date'/>
             <button
               type='submit'
-              style={{ padding: '5px', borderRadius: '3px', margin: '.5rem' }}
+              style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }}
               onClick={e => {
                 e.preventDefault()
                 handleLoginForm()

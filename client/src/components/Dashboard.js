@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Modal from "react-modal";
 import Login from './Login'
 import Signup from "./Signup"
+import './css/modal.css';
 
-// import './modal.css';
 const buttons = {
   padding: '5px', 
   borderRadius: '10px', 
@@ -46,13 +46,25 @@ class Dashboard  extends Component {
                 this.state.showModal &&
                 this.state.activeModal === "Login"
               }
+              className="Modal"
+              overlayClassName="Overlay"
               ariaHideApp={false}
               contentLabel="Login Modal"
             >
-              <div className="content">
-                <button className="close" onClick={this.handleCloseModal}>X</button>
-               <Login />
-              </div>
+              <div style={{borderBottom: '1px solid #054a91'}}>
+                <div style={{display: 'flex', color:'#054a91', fontWeight: 'bold', width: '150px'}}>
+                  Socializr Login
+                </div>
+                <button className="close" onClick={this.handleCloseModal}>
+                    X
+                  </button>
+                </div>
+                
+
+                <div className="content">
+                <Login />
+                </div>
+              
 
             </Modal>
         </div>
@@ -71,12 +83,18 @@ class Dashboard  extends Component {
               }
               ariaHideApp={false}
               contentLabel="Signup Modal"
+              className="Modal"
+              overlayClassName="Overlay"
             >
-              <div className="content">
-                <button className="close" onClick={this.handleCloseModal}>X</button>
+               <div style={{borderBottom: '1px solid #054a91'}}>
+                <div style={{display: 'flex', color:'#054a91', fontWeight: 'bold', width: '150px'}}>
+                  Socializr Signup
+                </div>
+                <button className="close" onClick={this.handleCloseModal}>
+                    X
+                  </button>
+                </div>
                 <Signup />
-              </div>
-
             </Modal>
         </div>
         </>
