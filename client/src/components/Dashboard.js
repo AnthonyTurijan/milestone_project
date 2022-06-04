@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Modal from "react-modal";
 import Login from './Login'
 import Signup from "./Signup"
+import './css/modal.css';
 
-import './modal.css';
 const buttons = {
   padding: '5px', 
   borderRadius: '10px', 
@@ -51,10 +51,20 @@ class Dashboard  extends Component {
               ariaHideApp={false}
               contentLabel="Login Modal"
             >
-              <div className="content">
-                <button className="close" onClick={this.handleCloseModal}>X</button>
-               <Login />
-              </div>
+              <div style={{borderBottom: '1px solid #054a91'}}>
+                <div style={{display: 'flex', color:'#054a91', fontWeight: 'bold', width: '150px'}}>
+                  Socializer Login
+                </div>
+                <button className="close" onClick={this.handleCloseModal}>
+                    X
+                  </button>
+                </div>
+                
+
+                <div className="content">
+                <Login />
+                </div>
+              
 
             </Modal>
         </div>
@@ -76,11 +86,15 @@ class Dashboard  extends Component {
               className="Modal"
               overlayClassName="Overlay"
             >
-              <div className="content">
-                <button className="close" onClick={this.handleCloseModal}>X</button>
+               <div style={{borderBottom: '1px solid #054a91'}}>
+                <div style={{display: 'flex', color:'#054a91', fontWeight: 'bold', width: '150px'}}>
+                  Socializer Signup
+                </div>
+                <button className="close" onClick={this.handleCloseModal}>
+                    X
+                  </button>
+                </div>
                 <Signup />
-              </div>
-
             </Modal>
         </div>
         </>

@@ -1,0 +1,26 @@
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--socializr-blue-tint);
+  border: 2px solid #054a91;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 270px;
+  height: 350px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 74, 145, .5);
+}
+.close{
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-end;
+}
