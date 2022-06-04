@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import Login from './Login'
 import Signup from "./Signup"
 
-// import './modal.css';
+import './modal.css';
 const buttons = {
   padding: '5px', 
   borderRadius: '10px', 
@@ -46,6 +46,8 @@ class Dashboard  extends Component {
                 this.state.showModal &&
                 this.state.activeModal === "Login"
               }
+              className="Modal"
+              overlayClassName="Overlay"
               ariaHideApp={false}
               contentLabel="Login Modal"
             >
@@ -71,6 +73,8 @@ class Dashboard  extends Component {
               }
               ariaHideApp={false}
               contentLabel="Signup Modal"
+              className="Modal"
+              overlayClassName="Overlay"
             >
               <div className="content">
                 <button className="close" onClick={this.handleCloseModal}>X</button>
