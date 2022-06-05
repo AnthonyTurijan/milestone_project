@@ -6,7 +6,11 @@ import './components/css/style.css'
 import Profile from "./pages/profile"
 import NewsFeed from "./pages/newsFeed"
 import Home from "./pages/home"
+
+import CreateNewEvent from './pages/createNewEvent';
+
 import Events from "./pages/events"
+
 
 function App() {
     return (
@@ -43,7 +47,10 @@ function App() {
                     <Route path='/' element={<Home/>} />
                     <Route path='/profile'  element={<Profile/>} />
                     <Route path='/newsFeed' element={<NewsFeed/>} />
+
+                    <Route path='/createNewEvent' element={<CreateNewEvent/>} />
                     <Route path='/events' element={<Events/>} />
+
                 </Routes> 
             </main>
         
