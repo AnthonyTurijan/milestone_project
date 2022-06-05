@@ -3,7 +3,7 @@ import { BrowserRouter as Router,  Route, Routes } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Navbar from './components/navbar';
 import './components/css/style.css'
-import Profile from "./pages/profile"
+import Profile from "./pages/profile/profile"
 import NewsFeed from "./pages/newsFeed"
 import Home from "./pages/home"
 import Events from "./pages/events"
