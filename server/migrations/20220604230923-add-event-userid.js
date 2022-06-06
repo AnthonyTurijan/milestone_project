@@ -6,10 +6,9 @@ module.exports = {
       'events',
       'user_id',
       {
-        type: Sequelize.DataTypes.INTEGER,
+          type: Sequelize.DataTypes.INTEGER,
       }
-  )
-  
+    )
     },
   async down(queryInterface, Sequelize) {
     await queryInterface.removeColumn('events', 'user_id');

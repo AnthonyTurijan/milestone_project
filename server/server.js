@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
 
 const eventsController = require('./controllers/events_controller')
 app.use('/events', eventsController)
+const usersController = require('./controllers/users_controllers')
+app.use('/users', usersController)
 
 //LISTEN
 app.listen(process.env.PORT, () => {

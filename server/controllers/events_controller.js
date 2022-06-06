@@ -6,43 +6,44 @@ const { Op } = require('sequelize')
 
 // FIND ALL EVENTS
 events.get('/', async (req, res) => {
-     try {
-        console.log('>>>>', req.query.name)
-        const foundEvents = await Events.findAll(
-            {
-            order: [ [ 'event_time', 'ASC' ] ]
-            ,
-            where: {
-                event_name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
-            }
-        }
-        )
-        res.status(200).json(foundEvents)
-    } catch (error) {
-        res.status(500).json(error)
-    }
+    try {
+       console.log('>>>>', req.query.name)
+       const foundEvents = await Events.findAll(
+           {
+           order: [ [ 'event_time', 'ASC' ] ]
+           ,
+           where: {
+               event_name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
+           }
+       }
+       )
+       res.status(200).json(foundEvents)
+   } catch (error) {
+       res.status(500).json(error)
+   }
 })
 
 
+
 // FIND A SPECIFIC EVENTS
-events.get(`/:name`, async (req, res) => {
+events.get('/:name', async (req, res) => {
     try {
-        console.log('>>>>', req.query.name)
+        console.log('>>>>', req.params.name)
         const foundEvents = await events.findAll({
-            where: { event_name: req.params.name }//,
-            // include: [
-            //     { 
-            //         model: profile, 
-            //         as: "profiles", 
-            //         attributes: { exclude: ["profile_id", "event_id"] },
-            //         include: { 
-            //             model: Events, 
-            //             as: "events", 
-            //             where: { event_name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` } } 
-            //         }
-            //     }
-            // ]
-            //,
+            where: { event_name: req.params.name },
+            include: [
+                { 
+                    model: Users, 
+                    as: "users", 
+                    attributes: { exclude: ["event_id"] },
+                    // include: { 
+                    //     model: Users, 
+                    //     as: "users", 
+                    //     where: { event_name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` } } 
+                    // }
+                }
+            ]
+            // ,
             // order: [
             //     [{ model: MeetGreet, as: "meet_greets" }, { model: Event, as: "event" }, 'date', 'DESC'],
             //     [{ model: SetTime, as: "set_times" }, { model: Event, as: "event" }, 'date', 'DESC']
