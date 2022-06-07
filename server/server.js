@@ -6,23 +6,26 @@ const { Sequelize } = require('sequelize')
 //REQUIRE DOTENV
 require('dotenv').config()
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
 
-// SEQUELIZE CONNECTION
-const sequelize = new Sequelize(process.env.PG_URI)
+// ROOT
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: 'Welcome to the Socailizr'
+    })
+})
 
-try {
-    sequelize.authenticate() 
-    console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
-} catch(err) {
-    console.log(`Unable to connect to PG: ${err}`) 
-}
+// const bodyParser = require('body-parser');
+// app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-});
 
-  
+const eventsController = require('./controllers/events_controllers')
+app.use('/events', eventsController)
+const usersController = require('./controllers/users_controllers')
+app.use('/users', usersController)
+const commentsController = require('./controllers/comments_controllers')
+app.use('/comments', commentsController)
+
 //LISTEN
 app.listen(process.env.PORT, () => {
 console.log(`Server listening on ${process.env.PORT}`);

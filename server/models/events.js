@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.DATE,
       allowNull:true
     },
-    user_name: {
+    user_id: {
       type:DataTypes.STRING,
       allowNull:false
     },
@@ -63,7 +63,8 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     }
-  }, {
+  }, 
+  {
     sequelize,
     modelName: 'Events',
     tableName: 'events',
