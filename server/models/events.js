@@ -4,10 +4,26 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Events extends Model {
-    static associate({Users, Profiles}) {
-      Events.belongsTo(Users, {
-        foreignKey: "user_id",
-        as: "users"
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate({Users, Profiles, Comments}) {
+      //user
+      Events.belongsTo(Users,{
+        foreignKey: 'user_name',
+        as: 'users'
+      })
+      //Profiles
+      Events.belongsTo(Profiles,{
+        foreignKey:'profile_id',
+        as: 'profiles'
+      })
+      //Comments
+      Events.hasMany(Comments,{
+        foreignKey: 'event_id',
+        as: 'events '
       })
     }
   }
