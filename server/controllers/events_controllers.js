@@ -53,7 +53,7 @@ events.get('/:name', async (req, res) => {
 })
 
 // // CREATE A BAND
-events.post('/', async (req, res) => {
+events.post('/createNewEvent', async (req, res) => {
     try {
         console.log(req.body)
         const newEvent = await Events.create(req.body)

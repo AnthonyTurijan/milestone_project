@@ -16,10 +16,10 @@ module.exports = (sequelize, DataTypes) => {
         as: 'users'
       })
       //Profiles
-      Events.belongsTo(Profiles,{
-        foreignKey:'profile_id',
-        as: 'profiles'
-      })
+      //Events.belongsTo(Profiles,{
+        // foreignKey:'profile_id',
+        // as: 'profiles'
+     //})
       //Comments
       Events.hasMany(Comments,{
         foreignKey: 'event_id',
@@ -61,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     image: {
       type:DataTypes.STRING,
-      allowNull:false
+      allowNull:true
     }
   }, 
   {
