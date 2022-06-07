@@ -19,6 +19,9 @@ export default function Navbar() {
       <li>
         <Link to="/newsfeed">News Feed</Link>
       </li>
+      <li>
+        <Link to="/events/createNewEvent">Create New Event</Link>
+      </li>
     </ul>
     </>
     );

@@ -9,8 +9,22 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
-      // define association here
+    static associate({Users, Profiles, Comments}) {
+      //user
+      Events.belongsTo(Users,{
+        foreignKey: 'user_id',
+        as: 'users'
+      })
+      //Profiles profiles do not exist in events
+      // Events.belongsTo(Profiles,{
+      //   foreignKey:'profile_id',
+      //   as: 'profiles'
+      // })
+      //Comments
+      Events.hasMany(Comments,{
+        foreignKey: 'event_id',
+        as: 'events '
+      })
     }
   }
   Events.init({
@@ -36,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.DATE,
       allowNull:true
     },
-    user_name: {
+    user_id: {
       type:DataTypes.STRING,
       allowNull:false
     },
@@ -47,9 +61,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     image: {
       type:DataTypes.STRING,
-      allowNull:false
+      allowNull:true
     }
-  }, {
+  }, 
+  {
     sequelize,
     modelName: 'Events',
     tableName: 'events',
