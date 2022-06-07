@@ -49,7 +49,7 @@ function App() {
                     <Route path='/profile'  element={<Profile/>} />
                     <Route path='/newsFeed' element={<NewsFeed/>} />
 
-                    <Route path='/createNewEvent' element={<CreateNewEvent/>} />
+                    <Route path='/events/createNewEvent' element={<CreateNewEvent/>} />
                     <Route path='/events' element={<Events/>} />
 
                 </Routes> 

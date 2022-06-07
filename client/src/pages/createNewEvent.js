@@ -31,6 +31,11 @@ function CreateNewEvent(){
                 <input id='image' name='image' />
             </div>
             <br/>
+            <div>
+                <label htmlFor='group_size'>Group Size</label>
+                <input id='group_size' name='group_size' />
+            </div>
+            <br/>
             <input type='submit' value='Add Event' />
         </form>
         </>
