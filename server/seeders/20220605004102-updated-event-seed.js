@@ -8,6 +8,7 @@ module.exports = {
       event_location: 'Online - Zoom meeting',
       event_time: new Date('2002-06-08 06:00:00'),
       user_id: 1,
+      user_name: 'Bad8reak',
       time_posted: new Date(),
       group_size: 0,      
     },

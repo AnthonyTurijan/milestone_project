@@ -9,7 +9,7 @@ const client = new Client({
 
 client.connect();
 
-client.query('Select user_id from users',(err, res)=>{
+client.query('Select * from events',(err, res)=>{
     if(!err){
         console.log(res.rows);
     }else{
@@ -17,3 +17,5 @@ client.query('Select user_id from users',(err, res)=>{
     }
     client.end;
 })
+
+module.exports = client

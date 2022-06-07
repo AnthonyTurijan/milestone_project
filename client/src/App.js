@@ -10,6 +10,7 @@ import Home from "./pages/home"
 import CreateNewEvent from './pages/createNewEvent';
 
 import Events from "./pages/events"
+import Sidebar from './pages/sidebar/Sidebar';
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
             </main>
         
             <aside className="page-sidebar">
-                Aside
+                <Sidebar/>
             </aside>
             <footer className="page-footer">
                 Footer

@@ -1,6 +1,7 @@
 //DEPENDENCIES
 const express = require('express')
 const app = express()
+const client = require('./databasepg')
 const { Sequelize } = require('sequelize')
 
 //REQUIRE DOTENV
