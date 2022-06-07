@@ -47,18 +47,8 @@ events.get('/:name', async (req, res) => {
             where: { 
                 event_name: { [Op.like]: `%${req.params.name ? req.params.name : ''}%` } 
             },
-            // include: [
-            //     { 
-            //         model: Users, 
-            //         as: "users", 
-            //         // attributes: { exclude: [ "users_id" ] },
-            //         include: {
-            //              model: Profiles, 
-            //              as: "profiles", 
-            //         } 
-            //     },
-            // ]
-        })
+        }
+        )
 
         res.status(200).json(foundEvent)
     } catch (error) {
