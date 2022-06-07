@@ -7,6 +7,7 @@ import Profile from "./pages/profile/profile"
 import NewsFeed from "./pages/newsFeed"
 import Home from "./pages/home"
 import Events from "./pages/events"
+import Sidebar from './pages/sidebar/Sidebar';
 
 function App() {
     return (
@@ -48,7 +49,7 @@ function App() {
             </main>
         
             <aside className="page-sidebar">
-                Aside
+                <Sidebar/>
             </aside>
             <footer className="page-footer">
                 Footer
