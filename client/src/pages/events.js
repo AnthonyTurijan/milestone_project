@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Home(){
+function Events(){
     return(
+        <>
         <div>Events Page</div>
+        </>
     )
 }
 
-export default Home;
+export default Events;
