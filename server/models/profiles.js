@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({Users, Events}) {
       //Comments
-      Profiles.hasMany(Events,{
-        foreignKey: 'profile_id',
-        as: 'events'
-      })
+      // Profiles.hasMany(Events,{
+      //   foreignKey: 'profile_id',
+      //   as: 'events'
+      // })
       //Users
       Profiles.belongsTo(Users,{
         foreignKey: 'user_id',
