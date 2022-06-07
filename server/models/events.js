@@ -4,7 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Events extends Model {
-    static associate({Users,}) {
+    static associate({Users, Profiles}) {
       Events.belongsTo(Users, {
         foreignKey: "user_id",
         as: "users"

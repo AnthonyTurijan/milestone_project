@@ -7,67 +7,64 @@ const { Op } = require('sequelize')
 // FIND ALL EVENTS
 events.get('/', async (req, res) => {
     try {
-       console.log('>>>>', req.query.name)
+       console.log('>>GET ALL EVENTS>>', req.params.name)
        const foundEvents = await Events.findAll(
            {
-           order: [ [ 'event_time', 'ASC' ] ]
+            order: [ [ 'time_posted', 'ASC' ] ]
            ,
            where: {
-               event_name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
-           }
+            event_name: { [Op.like]: `%${req.params.name ? req.params.name : ''}%` }
+        }
        }
        )
        res.status(200).json(foundEvents)
-   } catch (error) {
+   } 
+   catch (error) {
        res.status(500).json(error)
    }
 })
 
-
-
 // FIND A SPECIFIC EVENTS
 events.get('/:name', async (req, res) => {
+    console.log('>>GET A SPECIFIC EVENTS>>')
     try {
-        console.log('>>>>', req.params.name)
-        const foundEvents = await events.findAll({
-            where: { event_name: req.params.name },
-            include: [
-                { 
-                    model: Users, 
-                    as: "users", 
-                    attributes: { exclude: ["event_id"] },
-                    // include: { 
-                    //     model: Users, 
-                    //     as: "users", 
-                    //     where: { event_name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` } } 
-                    // }
-                }
-            ]
-            // ,
-            // order: [
-            //     [{ model: MeetGreet, as: "meet_greets" }, { model: Event, as: "event" }, 'date', 'DESC'],
-            //     [{ model: SetTime, as: "set_times" }, { model: Event, as: "event" }, 'date', 'DESC']
+        console.log('>>GET SPECIFIC EVENTS>>', req.params.name)
+        const foundEvent = await Events.findOne({
+            where: { 
+                event_name: { [Op.like]: `%${req.params.name ? req.params.name : ''}%` } 
+            },
+            // include: [
+            //     { 
+            //         model: Users, 
+            //         as: "users", 
+            //         // attributes: { exclude: [ "users_id" ] },
+            //         include: {
+            //              model: Profiles, 
+            //              as: "profiles", 
+            //         } 
+            //     },
             // ]
         })
-        res.status(200).json(foundEvents)
+
+        res.status(200).json(foundEvent)
     } catch (error) {
         res.status(500).json(error)
     }
 })
 
-
 // // CREATE A BAND
-// bands.post('/', async (req, res) => {
-//     try {
-//         const newBand = await Band.create(req.body)
-//         res.status(200).json({
-//             message: 'Successfully inserted a new band',
-//             data: newBand
-//         })
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// })
+events.post('/', async (req, res) => {
+    try {
+        console.log(req.body)
+        const newEvent = await Events.create(req.body)
+        res.status(200).json({
+            message: 'Successfully inserted a new event',
+            data: newEvent
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
 
 // // UPDATE A EVENT
 // bands.put('/:id', async (req, res) => {
