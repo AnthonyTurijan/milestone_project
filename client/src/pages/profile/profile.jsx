@@ -8,8 +8,8 @@ function Profile(){
            {/* <div className="profileRight">
                <div className="profileRightTop">
                     <div className="profileCover">
-                    <img className="profileCoverImg" src='assets/forest.jpg'/>
-                    <img className="profileUser" src='assets/cat.jpg'/>
+                    {/* <img className="profileCoverImg" src='assets/forest.jpg'/>
+                    <img className="profileUser" src='assets/cat.jpg'/> */}
                     </div>
                     <div className="profileInfo">
                         <h4 className="profileName">name</h4>
