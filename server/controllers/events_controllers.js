@@ -61,6 +61,7 @@ events.post('/createNewEvent', async (req, res) => {
             message: 'Successfully inserted a new event',
             data: newEvent
         })
+        res.redirect('/events')
     } catch(err) {
         res.status(500).json(err)
     }

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({Events, Profiles}) {
       //events
       Users.hasMany(Events,{
-        foreignKey: 'user_name',
+        foreignKey: 'user_id',
         as: 'events'
       })
       //profile

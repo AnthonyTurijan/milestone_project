@@ -5,7 +5,7 @@ function CreateNewEvent(){
         <>
         <h2>Create a New Event</h2>
         <br/>
-        <form method="POST" action='http://localhost:3001/events'>
+        <form method="POST" action='http://localhost:3001/events/createNewEvent'>
             <div>
                 <label htmlFor="event_name" >Event Name</label>
                 <input id='event_name' name='event_name' required />
@@ -34,6 +34,11 @@ function CreateNewEvent(){
             <div>
                 <label htmlFor='group_size'>Group Size</label>
                 <input id='group_size' name='group_size' />
+            </div>
+            <br/>
+            <div>
+                <label htmlFor="user_id">User Id</label>
+                <input id="user_id" name="user_id"/>
             </div>
             <br/>
             <input type='submit' value='Add Event' />

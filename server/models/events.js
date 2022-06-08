@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({Users, Profiles, Comments}) {
       //user
       Events.belongsTo(Users,{
-        foreignKey: 'user_name',
+        foreignKey: 'user_id',
         as: 'users'
       })
       //Profiles
@@ -54,7 +54,9 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     },
-    time_posted: DataTypes.DATE,
+    time_posted:{ 
+      type: DataTypes.DATE,
+    allowNull:true},
     group_size: {type:
       DataTypes.INTEGER,
       allowNull: false
