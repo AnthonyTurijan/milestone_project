@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'user_id',
         as: 'users'
       })
-      //Profiles
-      //Events.belongsTo(Profiles,{
-        // foreignKey:'profile_id',
-        // as: 'profiles'
-     //})
+      //Profiles profiles do not exist in events
+      // Events.belongsTo(Profiles,{
+      //   foreignKey:'profile_id',
+      //   as: 'profiles'
+      // })
       //Comments
       Events.hasMany(Comments,{
         foreignKey: 'event_id',

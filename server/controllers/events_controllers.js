@@ -3,18 +3,32 @@ const events = require('express').Router()
 const db = require('../models')
 const {Events} = db 
 const { Op } = require('sequelize')
+const profiles = require('../models/profiles')
 
 // FIND ALL EVENTS
 events.get('/', async (req, res) => {
     try {
        console.log('>>GET ALL EVENTS>>', req.params.name)
        const foundEvents = await Events.findAll(
-           {
+        {
             order: [ [ 'time_posted', 'ASC' ] ]
            ,
-           where: {
-            event_name: { [Op.like]: `%${req.params.name ? req.params.name : ''}%` }
-        }
+           where: { event_name: { [Op.like]: `%${req.params.name ? req.params.name : ''}%` },
+
+        //    include: [
+        //     { 
+        //         model: Users, 
+        //         as: "users", 
+        //         //attributes: { exclude: [ "event_id", "band_id" ] },
+        //         // include: {
+        //         //      model: profiles, 
+        //         //      as: "profiles", 
+        //         // } 
+        //     }]
+        },
+
+        attributes: { exclude: [ "user_name", "profile_id" ] },
+        
        }
        )
        res.status(200).json(foundEvents)
@@ -33,18 +47,8 @@ events.get('/:name', async (req, res) => {
             where: { 
                 event_name: { [Op.like]: `%${req.params.name ? req.params.name : ''}%` } 
             },
-            // include: [
-            //     { 
-            //         model: Users, 
-            //         as: "users", 
-            //         // attributes: { exclude: [ "users_id" ] },
-            //         include: {
-            //              model: Profiles, 
-            //              as: "profiles", 
-            //         } 
-            //     },
-            // ]
-        })
+        }
+        )
 
         res.status(200).json(foundEvent)
     } catch (error) {
@@ -52,8 +56,8 @@ events.get('/:name', async (req, res) => {
     }
 })
 
-// // CREATE A BAND
-events.post('/createNewEvent', async (req, res) => {
+// CREATE A EVENTS
+events.post('/', async (req, res) => {
     try {
         console.log(req.body)
         const newEvent = await Events.create(req.body)
@@ -68,36 +72,38 @@ events.post('/createNewEvent', async (req, res) => {
 })
 
 // // UPDATE A EVENT
-// bands.put('/:id', async (req, res) => {
-//     try {
-//         const updatedBands = await Band.update(req.body, {
-//             where: {
-//                 band_id: req.params.id
-//             }
-//         })
-//         res.status(200).json({
-//             message: `Successfully updated ${updatedBands} band(s)`
-//         })
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// })
+events.put('/:id', async (req, res) => {
+    try {
+        console.log(req.body, req.params.id)
+        const updatedEvents = await Events.update(req.body, {
+            where: {
+                event_id: req.params.id
+            }
+        })
+        res.status(200).json({
+            message: `Successfully updated ${updatedEvents} Events(s)`
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
 
 // DELETE A BAND
-// bands.delete('/:id', async (req, res) => {
-//     try {
-//         const deletedBands = await Band.destroy({
-//             where: {
-//                 band_id: req.params.id
-//             }
-//         })
-//         res.status(200).json({
-//             message: `Successfully deleted ${deletedBands} band(s)`
-//         })
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// })
+events.delete('/:id', async (req, res) => {
+    try {
+        console.log(req.params.id)
+        const deletedEvent = await Events.destroy({
+            where: {
+                event_id: req.params.id
+            }
+        })
+        res.status(200).json({
+            message: `Successfully deleted ${deletedEvent} band(s)`
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
 
 // EXPORT
 module.exports = events

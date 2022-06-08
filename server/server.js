@@ -1,7 +1,6 @@
 //DEPENDENCIES
 const express = require('express')
 const app = express()
-const client = require('./databasepg')
 const { Sequelize } = require('sequelize')
 
 //REQUIRE DOTENV
@@ -26,6 +25,8 @@ const usersController = require('./controllers/users_controllers')
 app.use('/users', usersController)
 const commentsController = require('./controllers/comments_controllers')
 app.use('/comments', commentsController)
+const profilesController = require('./controllers/profiles_controller')
+app.use('/profiles', profilesController)
 
 //LISTEN
 app.listen(process.env.PORT, () => {
