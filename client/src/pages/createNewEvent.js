@@ -1,6 +1,20 @@
 import React from "react";
+import {useEffect, useState} from 'react'
+import {useParams, Link,} from 'react-router-dom'
 
 function CreateNewEvent(){
+    // const {event_id} = useParams()
+    // const [eventData, setEventData] = useState([])
+
+    // useEffect(()=>{
+    //     const API_URL = `http://localhost:3000/events`
+    //     const fetchData = async () => {
+    //         const response = await fetch(API_URL)
+    //         const resData = await response.json()
+    //         setEventData(resData.results)
+    //     }
+    //     fetchData()
+    // }, [event_id])
     return(
         <>
         <h2>Create a New Event</h2>
@@ -22,7 +36,7 @@ function CreateNewEvent(){
             </div>
             <br/>
             <div>
-                <lable htmlFor='event_time'>Event Time</lable>
+                <label htmlFor='event_time'>Event Time</label>
                 <input id='event_time' name='event_time' />
             </div>
             <br/>
