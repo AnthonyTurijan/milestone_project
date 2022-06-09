@@ -1,12 +1,14 @@
+
 import React from 'react';
 import { BrowserRouter as Router,  Route, Routes } from "react-router-dom";
-import Dashboard from './components/Dashboard';
+import HeaderLinks from './components/HeaderLinks';
 import Navbar from './components/navbar';
+import SForm from './components/SForm';
+import LForm from './components/LForm';
 import './components/css/style.css'
 import Profile from "./pages/profile/profile"
 import NewsFeed from "./pages/newsFeed"
 import Home from "./pages/home"
-
 import CreateNewEvent from './pages/createNewEvent';
 
 import Events from "./pages/events"
@@ -36,7 +38,7 @@ function App() {
                     Socializr
                 </div>
                 <div style={{display:'flex', flexDirection: 'row', justifyContent: 'right', top:'-80px', position: 'relative', zIndex: '1'}}>
-                    <Dashboard/>
+                    <HeaderLinks/>
                 </div>
             </header>
             <nav style={{zIndex:2, backgroundColor: '#81a4cd'}}>
@@ -48,10 +50,10 @@ function App() {
                     <Route path='/' element={<Home/>} />
                     <Route path='/profile'  element={<Profile/>} />
                     <Route path='/newsFeed' element={<NewsFeed/>} />
-
                     <Route path='/events/createNewEvent' element={<CreateNewEvent/>} />
                     <Route path='/events' element={<Events/>} />
-
+                    <Route path='/signup' element={<SForm/>} />
+                    <Route path='/login' element={<LForm/>} />
                 </Routes> 
             </main>
         

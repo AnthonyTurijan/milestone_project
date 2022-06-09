@@ -49,10 +49,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false
     },
-    // profile_id: {
-    //   type:DataTypes.INTEGER,
-    //   allowNull: false
-    // },
+    salt: {
+      type:DataTypes.STRING,
+      allowNull: false
+    },
     registered_at: {
       type:DataTypes.DATE,
       allowNull:false

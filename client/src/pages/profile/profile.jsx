@@ -5,7 +5,7 @@ import "./profile.css"
 function Profile(){
     return(
        <div className="profile">
-           {/* <div className="profileRight">
+            <div className="profileRight">
                <div className="profileRightTop">
                     <div className="profileCover">
                     {/* <img className="profileCoverImg" src='assets/forest.jpg'/>
@@ -16,7 +16,7 @@ function Profile(){
                         <span className="profileBio">info</span>
                     </div>
                </div>
-           </div> */}
+           </div> 
        </div>
     )
 }
