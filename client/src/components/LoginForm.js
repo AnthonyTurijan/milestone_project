@@ -30,12 +30,21 @@ function Login() {
     }
   
     return (
-      <>         
-         <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'250px', textAlign:'center', color:'#054a91', fontSize:'12px'}}>
+      <>  
+      <h1>Login form</h1>       
+         <div style={{padding:'.5rem',display:'flex',flexDirection:'column', width:'450px', textAlign:'center', color:'#054a91', fontSize:'12px'}}>
           <form>
-            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={emailInputRef} type='email' placeholder='Email' autoComplete="username" />
-            <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete='current-password' />
-              <br />By clicking log in below, you agree to Socializr’s Terms of Service and have <br />read the Privacy Policy<br />
+            <div className="form-group">
+              <label className="label" htmlFor="email">Email: </label>
+              <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={emailInputRef} type='email' placeholder='Email' autoComplete="username" />
+            </div>
+            <div className="form-group">
+            <label className="label" htmlFor="password">Password: </label>
+              <input style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }} ref={passwordInputRef} type='password' placeholder='Password' autoComplete='current-password' />
+              </div>
+            <div className="form-group">
+              By clicking log in below, you agree to Socializr’s Terms of Service and have read the Privacy Policy
+            </div>
             <button
               type='submit'
               style={{ padding: '.25rem', borderRadius: '10px', margin: '.25rem' }}

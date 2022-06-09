@@ -1,0 +1,15 @@
+.error{
+    font-size: 10px;
+    color: red;
+    margin-left: 5px;
+  }
+
+  .form-group{
+      margin: .5rem;
+      display: flex;
+      width: 600px;
+  }
+  label{
+      width: 150px;
+      text-align: left;
+  }

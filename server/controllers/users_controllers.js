@@ -44,13 +44,23 @@ users.get('/:name', async (req, res) => {
 //Create User
 users.post('/', async (req, res) => {
     try {
-        console.log(req.body)
-        const newUser = await Users.create(req.body)
+        console.log(req.body.signup)
+        user = {user_name: req.body.signup.email.split('@')[0],
+        first_name: req.body.signup.firstName,
+        last_name: req.body.signup.lastName,
+        email: req.body.signup.email,
+        password_hash: req.body.signup.password, //test1234
+        registered_at: new Date(),
+        updatedAt: new Date(),
+        salt: req.body.signup.salt
+    }
+        const newUser = await Users.create(user)
         res.status(200).json({
             message: 'Successfully inserted a new event',
             data: newUser
         })
     } catch(err) {
+        console.log(err)
         res.status(500).json(err)
     }
 })
